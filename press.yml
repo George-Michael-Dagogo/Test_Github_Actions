@@ -1,4 +1,4 @@
-name: Run main.py Every 3 Hours
+name: Runtimeeeeeeeee
 
 on:
   schedule:
@@ -16,11 +16,12 @@ jobs:
       - name: Set Up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"  # Change to your Python version if needed
+          python-version: "3.x"
 
       - name: Install Dependencies
-        run: |
-          pip install -r requirements.txt  # Ensure dependencies are listed in requirements.txt
+        run: pip install -r requirements.txt
 
-      - name: Run main.py
+      - name: Run main.py with Environment Variables
+        env:
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         run: python main.py
